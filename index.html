@@ -630,16 +630,16 @@ form.rf{margin:28px auto 0;max-width:440px;text-align:left;display:grid;gap:18px
   cd(); setInterval(cd,30000);
 
   /* ---------- gallery: interactive scrolling carousel ---------- */
-  const DIM=[[1320,990],[1400,1050],[1050,1400],[1400,1050],[1400,1050],[1400,1050],[1050,1400],[1050,1400],[1050,1400],[1400,1050],[1050,1400],[1080,1354],[1400,1050],[1400,1050],[1400,1050],[1400,911],[1050,1400],[1400,1050],[1050,1400],[1050,1400],[1050,1400],[1050,1400],[1050,1400],[1400,933],[1050,1400],[1050,1400],[1050,1400],[1163,1400],[1400,1291],[1050,1400],[1400,1050],[1050,1400]];
-  const CAT={1:'party',2:'squad',3:'party',4:'party',5:'party',6:'squad',7:'mat',8:'mat',9:'mat',10:'squad',11:'party',12:'squad',13:'party',14:'squad',15:'squad',16:'squad',17:'squad',18:'squad',19:'squad',20:'squad',21:'party',22:'party',23:'party',24:'mat',25:'mat',26:'mat',27:'mat',28:'mat',29:'mat',30:'mat',31:'mat',32:'mat'};
-  const TAG={squad:'the squad',mat:'on the mat',party:'party time'};
-  const ORDER=[1,14,26,4,15,27,21,2,28,5,16,7,22,18,29,3,17,30,11,19,8,23,20,31,13,6,9,24,10,32,12,25];
+  const DIM=[[900,1600],[1400,1050],[1050,1400],[1400,1050],[1400,1050],[1400,1050],[1050,1400],[720,511],[1050,1400],[1400,1050],[1050,1400],[1203,1400],[1400,1050],[1400,1050],[1400,1050],[1400,911],[1050,1400],[1400,1050],[1050,1400],[1050,1400],[1050,1400],[1050,1400],[1050,1400],[1400,933],[1050,1400],[1050,1400],[1050,1400],[1163,1400],[1400,1291],[1050,1400],[1400,1050],[1050,1400],[1400,1400],[1400,1400]];
+  const CAT={1:'bday',2:'squad',3:'party',4:'party',5:'party',6:'squad',7:'mat',8:'squad',9:'mat',10:'squad',11:'party',12:'party',13:'party',14:'squad',15:'squad',16:'squad',17:'squad',18:'squad',19:'squad',20:'squad',21:'party',22:'party',23:'party',24:'mat',25:'mat',26:'mat',27:'mat',28:'mat',29:'mat',30:'mat',31:'mat',32:'mat',33:'mat',34:'mat'};
+  const TAG={squad:'the squad',mat:'on the mat',party:'party time',bday:'birthday love'};
+  const ORDER=[1,14,26,4,15,27,21,2,28,5,16,33,7,22,18,29,3,17,30,11,19,8,23,20,31,13,6,34,9,24,10,32,12,25];
   const track=document.getElementById('track'), cCount=document.getElementById('cCount'), cBar=document.getElementById('cBar');
   const lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCnt=lb.querySelector('.cnt');
   const rot=[-1.5,1.2,-.8,1.6,-1.2,.9];
   let list=[], active=0, lbi=0, auto=null, idleT=null, visible=false;
   function build(f){
-    list=ORDER.filter(n=>f==='all'||CAT[n]===f); track.innerHTML='';
+    list=ORDER.filter(n=>f==='all'||CAT[n]===f||(f==='party'&&CAT[n]==='bday')); track.innerHTML='';
     list.forEach((n,k)=>{ const [w,h]=DIM[n-1]; const c=document.createElement('div');
       c.className='card'; c.dataset.tag=TAG[CAT[n]]; c.style.setProperty('--ar',`${w}/${h}`); c.style.setProperty('--iw',w); c.style.setProperty('--ih',h); c.style.setProperty('--r',rot[k%rot.length]+'deg');
       c.innerHTML=`<img src="gallery${n}.jpg" alt="Our yoga family, ${TAG[CAT[n]]}" loading="${k<4?'eager':'lazy'}" decoding="async" draggable="false">`;
