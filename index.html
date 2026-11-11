@@ -532,7 +532,7 @@ form.rf{margin:28px auto 0;max-width:440px;text-align:left;display:grid;gap:18px
   </section>
 </main>
 
-<audio id="bgm" src="music.mp3" preload="auto" loop playsinline></audio>
+<audio id="bgm" src="jingle-boogie.mp3" preload="auto" loop playsinline></audio>
 <button class="music-btn" id="musicBtn" type="button" aria-label="Pause music" aria-pressed="true">
   <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
   <svg class="mute" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>
@@ -733,7 +733,7 @@ form.rf{margin:28px auto 0;max-width:440px;text-align:left;display:grid;gap:18px
 
   /* ---------- RSVP: one guest per reply ---------- */
   // Paste the new Google Apps Script Web app URL between the quotes. Empty = preview mode (nothing is saved).
-  const RSVP_URL = 'https://script.google.com/macros/s/AKfycbwyVJtq83_Yon7t-4H02BAqnzqiLpRsSFE-BoTyE6KmfxP14jQTiQKI6GGy3VtrvrYS6Q/exec';
+  const RSVP_URL = 'https://script.google.com/macros/s/AKfycbykhmBddZ4rwlPznYmTK_7HmYhoa-fG7HkdGrU0VYooQLEaBKVTsUGo3G0Qi8UYbqHlag/exec';
   const form=document.getElementById('rsvpForm'), thanks=document.getElementById('thanks'), toast=document.getElementById('toast');
   const sendBtn=form.querySelector('button[type=submit]'), note=form.querySelector('.rnote');
   note.textContent = RSVP_URL ? 'Your reply goes straight to the party organizers.' : 'Preview mode: replies are not saved yet.';
